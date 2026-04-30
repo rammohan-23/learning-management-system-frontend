@@ -1,16 +1,236 @@
-# React + Vite
+# 🎓 Learning Management System Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Learning Management System (LMS) frontend** built using **React, Vite, and Tailwind CSS**, integrated with a Spring Boot backend.
 
-Currently, two official plugins are available:
+This project demonstrates a **full-featured LMS UI** with authentication, role-based access, course management, lesson tracking, and progress monitoring.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔐 Authentication
 
-## Expanding the ESLint configuration
+* JWT-based login system
+* Error handling (no alerts, inline validation)
+* Role-based UI rendering (ADMIN / STUDENT)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### 📚 Courses
+
+* View all available courses
+* Enroll in courses (only once)
+* Prevent duplicate enrollments
+* Admin:
+
+  * Create courses
+  * Edit courses (inline editing)
+  * Delete courses
+
+---
+
+### 🎥 Lessons
+
+* View lessons per course
+* Watch video links
+* Mark lessons as completed
+* Admin:
+
+  * Add lessons
+  * Edit lessons (inline editing)
+  * Delete lessons
+
+---
+
+### 📊 Dashboard
+
+* View enrolled courses
+* Track progress (% completed)
+* Dynamic progress updates
+
+---
+
+### 🎨 UI/UX
+
+* Built with **Tailwind CSS**
+* Responsive grid layout
+* Inline editing (no popups)
+* Clean admin panel
+* Proper state-driven UI updates
+
+---
+
+## 🧱 Tech Stack
+
+* ⚛️ React (with Hooks)
+* ⚡ Vite
+* 🎨 Tailwind CSS
+* 🌐 Axios (API calls)
+* 🔐 JWT Decode
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── CourseProgress.jsx
+│
+├── pages/
+│   ├── Login.jsx
+│   ├── Courses.jsx
+│   ├── Lessons.jsx
+│   ├── Dashboard.jsx
+│   ├── Admin.jsx
+│
+├── services/
+│   └── api.js
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repo
+
+```
+git clone <your-frontend-repo>
+cd lms-ui-project
+```
+
+---
+
+### 2. Install dependencies
+
+```
+npm install
+```
+
+---
+
+### 3. Run the project
+
+```
+npm run dev
+```
+
+App runs at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔗 API Configuration
+
+Update base URL in:
+
+📁 `src/services/api.js`
+
+```javascript
+baseURL: "http://localhost:8080"
+```
+
+For deployment:
+
+```javascript
+baseURL: "https://your-backend-url.onrender.com"
+```
+
+---
+
+## 🔐 Role-Based Access
+
+| Role    | Access                                 |
+| ------- | -------------------------------------- |
+| STUDENT | View, Enroll, Complete lessons         |
+| ADMIN   | Create, Edit, Delete courses & lessons |
+
+---
+
+## 🧠 Key Concepts Implemented
+
+* React Hooks (`useState`, `useEffect`)
+* State lifting & shared state
+* Conditional rendering
+* Controlled components (forms)
+* Role-based UI control
+* API integration with Axios
+* Inline editing UX (no prompts)
+* Dynamic UI updates without refresh
+
+---
+
+## ⚠️ Known Limitations (Frontend)
+
+* No pagination (all courses load at once)
+* No search/filter yet
+* Basic styling (can be enhanced further)
+* No form validation library (manual handling)
+
+---
+
+## 🚀 Future Improvements
+
+* 🔍 Search & filter courses
+* 📱 Mobile responsiveness enhancements
+* 📊 Charts for analytics
+* 📄 Certificate generation UI
+* 🌙 Dark mode
+* 🔔 Notifications
+
+---
+
+# 🔙 Backend Overview (Brief)
+
+The frontend integrates with a Spring Boot backend that provides:
+
+* JWT Authentication
+* Course & Lesson APIs
+* Enrollment system
+* Progress tracking
+* Role-based authorization
+* Transaction-safe deletes (handling FK constraints)
+
+👉 Backend is maintained in a **separate repository**
+
+---
+
+# 🌍 Deployment (Frontend)
+
+Frontend can be deployed easily using:
+
+* Vercel (recommended)
+
+Steps:
+
+1. Push repo to GitHub
+2. Import project in Vercel
+3. Set API base URL
+4. Deploy
+
+---
+
+# 👨‍💻 Author
+
+Built as a full-stack LMS project demonstrating real-world architecture and UI/UX practices.
+
+---
+
+# ⭐ Final Note
+
+This project showcases:
+
+* Full CRUD operations
+* Role-based system
+* Clean UI/UX
+* Real-world LMS functionality
+
+👉 Ready for **portfolio & interviews**
