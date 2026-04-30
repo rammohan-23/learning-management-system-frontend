@@ -1,4 +1,4 @@
-# 🎓 Learning Management System Frontend (React + Vite)
+# 🎓 Learning Management System Frontend (React)
 
 A modern **Learning Management System (LMS) frontend** built using **React, Vite, and Tailwind CSS**, integrated with a Spring Boot backend.
 
