@@ -100,8 +100,8 @@ src/
 ### 1. Clone the repo
 
 ```
-git clone <your-frontend-repo>
-cd lms-ui-project
+git clone https://github.com/rammohan-23/learning-management-system-frontend
+cd learning-management-system-frontend
 ```
 
 ---
@@ -138,11 +138,11 @@ Update base URL in:
 baseURL: "http://localhost:8080"
 ```
 
-For deployment:
+<!-- For deployment:
 
 ```javascript
 baseURL: "https://your-backend-url.onrender.com"
-```
+``` -->
 
 ---
 
@@ -203,7 +203,7 @@ The frontend integrates with a Spring Boot backend that provides:
 
 ---
 
-# 🌍 Deployment (Frontend)
+<!-- # 🌍 Deployment (Frontend)
 
 Frontend can be deployed easily using:
 
@@ -214,13 +214,13 @@ Steps:
 1. Push repo to GitHub
 2. Import project in Vercel
 3. Set API base URL
-4. Deploy
+4. Deploy -->
 
 ---
 
 # 👨‍💻 Author
 
-Built as a full-stack LMS project demonstrating real-world architecture and UI/UX practices.
+Ram Mohan Reddy Seelam, Built as a full-stack LMS project demonstrating real-world architecture and UI/UX practices.
 
 ---
 
