@@ -13,7 +13,7 @@ function Admin({ loadCourses }) {
     courseId: ""
   });
 
-  // 🔥 NEW: courses list for dropdown
+  // NEW: courses list for dropdown
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Admin({ loadCourses }) {
       setCourse({ title: "", description: "" });
 
       loadCourses(); // refresh parent
-      fetchCourses(); // 🔥 refresh dropdown
+      fetchCourses(); // refresh dropdown
     } catch (err) {
       alert("Only ADMIN allowed");
     }
@@ -50,7 +50,7 @@ function Admin({ loadCourses }) {
 
       alert("Lesson Added!");
 
-      // 🔥 reset
+      // reset
       setLesson({
         title: "",
         videoUrl: "",
@@ -128,7 +128,7 @@ function Admin({ loadCourses }) {
           }
         />
 
-        {/* 🔥 DROPDOWN INSTEAD OF INPUT */}
+        {/* DROPDOWN INSTEAD OF INPUT */}
         <select
           value={lesson.courseId}
           className="border p-2 rounded bg-white text-black"

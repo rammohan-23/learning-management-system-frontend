@@ -6,7 +6,7 @@ function Courses({ courses, role, loadCourses }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
 
-  // 🔥 NEW: editing state
+  // NEW: editing state
   const [editingCourse, setEditingCourse] = useState(null);
   const [editData, setEditData] = useState({
     title: "",
@@ -38,7 +38,7 @@ function Courses({ courses, role, loadCourses }) {
     }
   };
 
-  // 🔥 DELETE COURSE
+  // DELETE COURSE
   const deleteCourse = async (id) => {
     try {
       await API.delete(`/courses/${id}`);
@@ -48,7 +48,7 @@ function Courses({ courses, role, loadCourses }) {
     }
   };
 
-  // 🔥 START EDIT
+  // START EDIT
   const startEdit = (course) => {
     setEditingCourse(course.id);
     setEditData({
@@ -57,7 +57,7 @@ function Courses({ courses, role, loadCourses }) {
     });
   };
 
-  // 🔥 SAVE EDIT
+  // SAVE EDIT
   const saveEdit = async (id) => {
     try {
       await API.put(`/courses/${id}`, editData);
@@ -68,7 +68,7 @@ function Courses({ courses, role, loadCourses }) {
     }
   };
 
-  // 🔥 CANCEL EDIT
+  // CANCEL EDIT
   const cancelEdit = () => {
     setEditingCourse(null);
   };
@@ -84,7 +84,7 @@ function Courses({ courses, role, loadCourses }) {
             className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition"
           >
 
-            {/* 🔥 INLINE EDIT UI */}
+            {/* INLINE EDIT UI */}
             {editingCourse === c.id ? (
               <>
                 <input
@@ -110,7 +110,7 @@ function Courses({ courses, role, loadCourses }) {
               </>
             )}
 
-            {/* 🔥 NORMAL USER ACTIONS (hide during edit) */}
+            {/* NORMAL USER ACTIONS (hide during edit) */}
             {editingCourse !== c.id && (
               <>
                 <button
@@ -134,7 +134,7 @@ function Courses({ courses, role, loadCourses }) {
               </>
             )}
 
-            {/* 🔥 ADMIN BUTTONS */}
+            {/* ADMIN BUTTONS */}
             {role === "ADMIN" && (
               <div className="flex gap-2 mt-3">
 
@@ -179,7 +179,7 @@ function Courses({ courses, role, loadCourses }) {
         ))}
       </div>
 
-      {/* 🔥 Show lessons */}
+      {/* Show lessons */}
       {selectedCourse && (
         <div className="mt-6">
           <Lessons

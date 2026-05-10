@@ -23,7 +23,7 @@ function App() {
     }
   }
 
-  // 🔥 load courses once
+  // load courses once
   useEffect(() => {
     if (token) {
       loadCourses();
@@ -44,13 +44,13 @@ function App() {
         <Navbar role={role} />
         <div className="p-6 bg-gray-100 min-h-screen">
          <Courses
-  courses={courses}
-  role={role}
-  loadCourses={loadCourses}
-/>
+            courses={courses}
+            role={role}
+            loadCourses={loadCourses}
+        />
            <Dashboard />
           {role === "ADMIN" && (
-            <Admin loadCourses={loadCourses} /> // 🔥 pass function
+            <Admin loadCourses={loadCourses} /> // pass function
           )}
            </div>
         </>

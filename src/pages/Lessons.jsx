@@ -5,7 +5,7 @@ function Lessons({ courseId, role }) {
   const [lessons, setLessons] = useState([]);
   const [progress, setProgress] = useState([]);
 
-  // 🔥 NEW: editing state
+  // NEW: editing state
   const [editingLesson, setEditingLesson] = useState(null);
   const [editData, setEditData] = useState({ title: "", videoUrl: "" });
 
@@ -34,7 +34,7 @@ function Lessons({ courseId, role }) {
     loadProgress();
   };
 
-  // 🔥 DELETE LESSON
+  // DELETE LESSON
   const deleteLesson = async (id) => {
     try {
       await API.delete(`/lessons/${id}`);
@@ -44,7 +44,7 @@ function Lessons({ courseId, role }) {
     }
   };
 
-  // 🔥 START EDIT
+  // START EDIT
   const startEdit = (lesson) => {
     setEditingLesson(lesson.id);
     setEditData({
@@ -53,7 +53,7 @@ function Lessons({ courseId, role }) {
     });
   };
 
-  // 🔥 SAVE EDIT
+  // SAVE EDIT
   const saveEdit = async (id) => {
     try {
       await API.put(`/lessons/${id}`, editData);
@@ -64,7 +64,7 @@ function Lessons({ courseId, role }) {
     }
   };
 
-  // 🔥 CANCEL EDIT
+  // CANCEL EDIT
   const cancelEdit = () => {
     setEditingLesson(null);
   };
@@ -79,7 +79,7 @@ function Lessons({ courseId, role }) {
             key={l.id}
             className="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition"
           >
-            {/* 🔥 INLINE EDIT UI */}
+            {/* INLINE EDIT UI */}
             {editingLesson === l.id ? (
               <>
                 <input
@@ -130,7 +130,7 @@ function Lessons({ courseId, role }) {
               </button>
             )}
 
-            {/* 🔥 ADMIN BUTTONS */}
+            {/* ADMIN BUTTONS */}
             {role === "ADMIN" && (
               <div className="flex gap-2 mt-3">
 
